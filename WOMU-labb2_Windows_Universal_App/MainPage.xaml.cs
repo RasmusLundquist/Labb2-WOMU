@@ -26,5 +26,25 @@ namespace WOMU_labb2_Windows_Universal_App
         {
             this.InitializeComponent();
         }
+
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBlock2_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            return new Users(FirstName = firstName.Text, LastName = lastName.Text);
+        }
     }
 }
