@@ -1,0 +1,9 @@
+﻿<Application
+    x:Class="WOMU_labb2_Windows_Universal_App.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WOMU_labb2_Windows_Universal_App"
+    RequestedTheme="Light">
+
+</Application>
+
