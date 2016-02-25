@@ -44,7 +44,8 @@ namespace WOMU_labb2_Windows_Universal_App
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            return new Users(FirstName = firstName.Text, LastName = lastName.Text);
+            //return new Users(FirstName = firstName.Text, LastName = lastName.Text);
+            
         }
     }
 }
