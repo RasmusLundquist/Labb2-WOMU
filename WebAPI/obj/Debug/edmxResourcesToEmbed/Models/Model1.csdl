@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="TaskID" Type="Int32" Nullable="false" />
+    <Property Name="BeginDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeadlineDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Requirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.Assignments" FromRole="Tasks" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tasks" Relationship="Self.Assignments" FromRole="Users" ToRole="Tasks" />
+  </EntityType>
+  <Association Name="Assignments">
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DatabasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="Assignments" Association="Self.Assignments">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
