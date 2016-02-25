@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -22,9 +24,14 @@ namespace WOMU_labb2_Windows_Universal_App
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private HttpClient httpClient;
+        private User activeUser;
         public MainPage()
         {
             this.InitializeComponent();
+            httpClient.BaseAddress = new Uri("http://localhost:4189");
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application.json"));
+            httpClient.MaxResponseContentBufferSize = 300000;
         }
 
         private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
@@ -44,8 +51,10 @@ namespace WOMU_labb2_Windows_Universal_App
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            //return new Users(FirstName = firstName.Text, LastName = lastName.Text);
-            
+            User user = new User();
+            user.FirstName = firstName.Text;
+            user.LastName = lastName.Text;
+            activeUser = user;
         }
     }
 }
