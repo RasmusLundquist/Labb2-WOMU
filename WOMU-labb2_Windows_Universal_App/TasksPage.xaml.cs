@@ -28,7 +28,7 @@ namespace WOMU_labb2_Windows_Universal_App
         private HttpClient httpClient;
         public TasksPage()
         {
-            this.InitializeComponent();
+            //this.InitializeComponent();
             httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("http://localhost:1191/");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -51,7 +51,7 @@ namespace WOMU_labb2_Windows_Universal_App
                                   Title = t.GetObject()["Title"].GetString(),
                                   Requirements = t.GetObject()["Requirements"].GetString()
                               };
-                task_details.DataContext = current;
+                //task_details.DataContext = current;
             }
         }
     }

@@ -10,11 +10,11 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black"/>
-                <GradientStop Color="#FFF3CDCD" Offset="1"/>
+                <GradientStop Color="#FF9AF3F5"/>
+                <GradientStop Color="#FFF7F9F9" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock Text="Employees Details Consume From Web API" FontSize="25" Height="50" Width="550" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock Text="TextBlock" FontSize="25" Height="56" TextAlignment="Center" VerticalAlignment="Top" Margin="0,0,10,0"/>
         <GridView x:ConnectionId='1' Name="task_details" ItemsSource="{Binding}" Margin="50,150,0,0">
             <GridView.ItemTemplate>
                 <DataTemplate>

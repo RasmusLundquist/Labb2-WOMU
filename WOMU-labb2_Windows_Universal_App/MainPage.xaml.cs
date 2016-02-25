@@ -26,11 +26,13 @@ namespace WOMU_labb2_Windows_Universal_App
     {
         private HttpClient httpClient;
         private User activeUser;
+
         public MainPage()
         {
             this.InitializeComponent();
+            httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("http://localhost:4189");
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application.json"));
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             httpClient.MaxResponseContentBufferSize = 300000;
         }
 
@@ -52,9 +54,9 @@ namespace WOMU_labb2_Windows_Universal_App
         private void button_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-            user.FirstName = firstName.Text;
-            user.LastName = lastName.Text;
-            activeUser = user;
+            //user.FirstName = firstName.Text;
+            //user.LastName = lastName.Text;
+            //activeUser = user;
         }
     }
 }
