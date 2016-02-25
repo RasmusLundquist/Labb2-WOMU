@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebAPI.Models.TaskDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeginDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeadlineDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Requirements)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staff)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeginDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeadlineDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Requirements)
+        </td>
+        <td>
+            @foreach(var staff in item.Staff)
+            {
+                <table>
+                    <tr>
+                        <th>
+                           <p>Förnamn.</p>
+                        </th>
+                        <td>
+                            @Html.DisplayFor(staffItem => staff.FirstName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Efternamn:</p>
+                        </th>
+                        <td>
+                            @Html.DisplayFor(staffItem => staff.LastName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Användarid:</p>
+                        </th>
+                        <td>
+                            @Html.DisplayFor(staffItem => staff.UserID)
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </td>
+    </tr>
+}
+
+</table>
