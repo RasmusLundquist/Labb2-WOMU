@@ -30,7 +30,7 @@ namespace WOMU_labb2_Windows_Universal_App
         {
             //this.InitializeComponent();
             httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://localhost:1191/");
+            httpClient.BaseAddress = new Uri("http://localhost:4189/");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             // Limit the max buffer size for the response so we don't get overwhelmed
             httpClient.MaxResponseContentBufferSize = 300000;
@@ -51,7 +51,7 @@ namespace WOMU_labb2_Windows_Universal_App
                                   Title = t.GetObject()["Title"].GetString(),
                                   Requirements = t.GetObject()["Requirements"].GetString()
                               };
-                //task_details.DataContext = current;
+                task_details.DataContext = current;
             }
         }
     }
