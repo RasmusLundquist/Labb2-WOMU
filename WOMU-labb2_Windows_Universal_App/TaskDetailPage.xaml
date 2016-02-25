@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="WOMU_labb2_Windows_Universal_App.TaskDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WOMU_labb2_Windows_Universal_App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="27,14,0,0" VerticalAlignment="Top" Height="30" Width="96" Content="Ta Ansvar"/>
+        <Button x:Name="button2" Content="Avsäg Ansvar" HorizontalAlignment="Left" Margin="146,13,0,0" VerticalAlignment="Top" Height="32" Width="117"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="23,115,0,0" SelectionChanged="textBlock_SelectionChanged">
+        	<Run Text="Uppgifts"/>
+        	<Run Text="ID:"/>
+        </TextBlock>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="29,143,0,0" TextWrapping="Wrap" Text="Titel:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="13,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="84">
+        	<Run Text="Beskrivning:"/>
+        	<LineBreak/>
+        	<Run/>
+        </TextBlock>
+        <TextBlock x:Name="taskID" HorizontalAlignment="Left" Margin="157,117,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="title" HorizontalAlignment="Left" Margin="157,145,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="requirements" HorizontalAlignment="Left" Margin="154,168,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
