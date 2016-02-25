@@ -6,9 +6,9 @@
     <RootPropertyPathName Name="Emp_Address" />
     <RootPropertyPathName Name="Emp_Name" />
     <RootPropertyPathName Name="Emp_Id" />
-    <RootPropertyPathName Name="User_LastName" />
-    <RootPropertyPathName Name="User_FirstName" />
-    <RootPropertyPathName Name="User_ID" />
+    <RootPropertyPathName Name="LastName" />
+    <RootPropertyPathName Name="FirstName" />
+    <RootPropertyPathName Name="UserID" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">

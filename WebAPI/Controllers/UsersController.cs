@@ -27,7 +27,11 @@ namespace WebAPI.Controllers
     */
     public class UsersController : ODataController
     {
+
         private DatabasEntities db = new DatabasEntities();
+
+
+       
 
         // GET: odata/Users
         [EnableQuery]
