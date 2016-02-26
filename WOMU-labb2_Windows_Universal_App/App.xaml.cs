@@ -26,6 +26,11 @@ namespace WOMU_labb2_Windows_Universal_App
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
+        /// 
+        public static Uri BaseUri = new Uri("http://localhost:4189/api/user");
+        public static User ActiveUser { get; set; }
+        public static Frame RootFrame { get; set; }
+
         public App()
         {
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOMU-labb2_Windows_Universal_App", "WOMU-labb2_Windows_Universal_App\WOMU-labb2_Windows_Universal_App.csproj", "{4BFE04E5-1F2D-4629-88CB-D30A0B1BED73}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AD63C36-960B-48E6-A1CF-47714950E64A} = {3AD63C36-960B-48E6-A1CF-47714950E64A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{3AD63C36-960B-48E6-A1CF-47714950E64A}"
 EndProject

@@ -15,21 +15,27 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock Text="TextBlock" FontSize="25" Height="50" Width="340" TextAlignment="Center" VerticalAlignment="Top" Margin="10,0"/>
-        <GridView Name="task_details" ItemsSource="{Binding}" Margin="50,150,0,0">
-            <GridView.ItemTemplate>
+        <ListBox Name="userList" Width="250" Height="150" Margin="10" Background="#00F2F2F2">
+            <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Width="250" Height="150" Margin="10" Background="#FF161C8F">
-                        <TextBlock Text="{Binding User_ID}" Padding="10" />
-                        <TextBlock Margin="10,0">
-                            <Run Text="{Binding User_FirstName}" FontSize="20" />
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap">
+                            <Run FontWeight="ExtraBold">User ID:</Run>
+                            <Run Text="{Binding UserID}"/>
                         </TextBlock>
-                        <TextBlock Margin="10,0">
-                            <Run Text="{Binding User_LastName}" FontSize="20"/>
+                        <TextBlock>
+                            <Run FontWeight="ExtraBold">Förnamn:</Run>
+                            <Run Text ="{Binding FirstName}"/>
+                        </TextBlock>
+                        <TextBlock>
+                            <Run FontWeight="ExtraBold">Efternamn:</Run>
+                            <Run Text ="{Binding LastName}"/>
                         </TextBlock>
                     </StackPanel>
+
                 </DataTemplate>
-            </GridView.ItemTemplate>
-        </GridView>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Page>
 

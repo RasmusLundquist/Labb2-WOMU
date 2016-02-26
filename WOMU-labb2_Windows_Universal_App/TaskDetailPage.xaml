@@ -7,7 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF9AF3F5"/>
+                <GradientStop Color="#FFF7F9F9" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Button x:Name="button" HorizontalAlignment="Left" Margin="27,14,0,0" VerticalAlignment="Top" Height="30" Width="96" Content="Ta Ansvar"/>
         <Button x:Name="button2" Content="Avsäg Ansvar" HorizontalAlignment="Left" Margin="146,13,0,0" VerticalAlignment="Top" Height="32" Width="117"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="23,115,0,0" SelectionChanged="textBlock_SelectionChanged">

@@ -98,7 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Task.cs" />
+    <Compile Include="DataTask.cs" />
     <Compile Include="TaskDetailPage.xaml.cs">
       <DependentUpon>TaskDetailPage.xaml</DependentUpon>
     </Compile>
