@@ -84,7 +84,10 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="WOMU_labb2_Windows_Universal_App.MainPage" />
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="WOMU_labb2_Windows_Universal_App.UserView" />
   </Roots.RootTypes>
 </Roots>

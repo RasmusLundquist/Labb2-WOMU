@@ -31,21 +31,6 @@ namespace WOMU_labb2_Windows_Universal_App
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            using (var Client = new HttpClient())
-            {
-                var response = "";
-                Task task = Task.Run(async () =>
-                {
-                    response = await Client.GetStringAsync(App.BaseUri);
-                });
-                task.Wait();
-                List<User> list = JsonConvert.DeserializeObject<List<User>>(response);
-                userList.ItemsSource = list;
-            }
-
-        }
 
         private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {

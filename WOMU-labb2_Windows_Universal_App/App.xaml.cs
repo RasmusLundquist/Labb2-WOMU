@@ -27,8 +27,8 @@ namespace WOMU_labb2_Windows_Universal_App
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         /// 
-        public static Uri BaseUri = new Uri("http://localhost:4189/api/user");
-        public static User ActiveUser { get; set; }
+        public static Uri BaseUri = new Uri("http://localhost:4189/api/User");
+        public static User activeUser { get; set; }
         public static Frame RootFrame { get; set; }
 
         public App()
@@ -80,7 +80,7 @@ namespace WOMU_labb2_Windows_Universal_App
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(UserView), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();

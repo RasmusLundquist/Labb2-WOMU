@@ -406,3 +406,8 @@ C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb
 C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\TaskDetailPage.xaml
 C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\TaskDetailPage.xbf
 C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\UserView.g.i.cs
+C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\UserView.g.cs
+C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\UserView.xaml
+C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\UserView.xbf
+C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\bin\x86\Debug\UserView.xbf

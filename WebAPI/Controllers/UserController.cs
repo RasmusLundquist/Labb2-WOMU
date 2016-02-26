@@ -1,24 +1,142 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Description;
 using WebAPI.Models;
 
-namespace WebAPI.Controllers
+namespace web_site.Controllers
 {
-    [Route("api/user")]
-    public class UserController : Controller
+    public class UsersController : ApiController
     {
-        DatabasEntities db = new DatabasEntities();
+        private DatabasEntities db = new DatabasEntities();
 
-        // GET: User
-        [HttpGet]
-        public IEnumerable<Users> Get()
+        /// <summary>
+        /// Gets the users from the server.
+        /// </summary>
+        // GET: api/Users
+        public IQueryable<Users> GetUsers()
         {
-            List<Users> userList = db.Users.ToList<Users>();
+            return db.Users;
+        }
 
-            return userList;
+        /// <summary>
+        /// Looks up some User by ID.
+        /// </summary>
+        /// <param name="id">The ID of the User.</param>
+        // GET: api/Users/5
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult GetUser(int id)
+        {
+            Users user = db.Users.Find(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+        /// <summary>
+        /// Update an existing User.
+        /// </summary>
+        /// <param name="id">ID Of the user</param>
+        /// <param name="user">
+        /// User info
+        /// </param>
+        // PUT: api/Users/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutUser(int id, Users user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != user.UserID)
+            {
+                return BadRequest();
+            }
+
+            db.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+        /// <summary>
+        /// Create a new User
+        /// </summary>
+        /// <param name="user">
+        /// 
+        /// </param>
+        // POST: api/Users
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult PostUser(Users user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.Users.Add(user);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = user.UserID }, user);
+        }
+
+        /// <summary>
+        /// Delete an User
+        /// </summary>
+        /// <param name="id">
+        /// ID of User
+        /// </param>
+        // DELETE: api/Users/5
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult DeleteUser(int id)
+        {
+            Users user = db.Users.Find(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            db.Users.Remove(user);
+            db.SaveChanges();
+
+            return Ok(user);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private bool UserExists(int id)
+        {
+            return db.Users.Count(e => e.UserID == id) > 0;
         }
     }
 }

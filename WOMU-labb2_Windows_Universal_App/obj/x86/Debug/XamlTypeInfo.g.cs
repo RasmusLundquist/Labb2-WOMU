@@ -132,19 +132,21 @@ namespace WOMU_labb2_Windows_Universal_App.WOMU_labb2_Windows_Universal_App_Xaml
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
+            _typeNameTable = new string[6];
             _typeNameTable[0] = "WOMU_labb2_Windows_Universal_App.TaskDetailPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "WOMU_labb2_Windows_Universal_App.TasksPage";
             _typeNameTable[4] = "WOMU_labb2_Windows_Universal_App.MainPage";
+            _typeNameTable[5] = "WOMU_labb2_Windows_Universal_App.UserView";
 
-            _typeTable = new global::System.Type[5];
+            _typeTable = new global::System.Type[6];
             _typeTable[0] = typeof(global::WOMU_labb2_Windows_Universal_App.TaskDetailPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::WOMU_labb2_Windows_Universal_App.TasksPage);
             _typeTable[4] = typeof(global::WOMU_labb2_Windows_Universal_App.MainPage);
+            _typeTable[5] = typeof(global::WOMU_labb2_Windows_Universal_App.UserView);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -182,6 +184,7 @@ namespace WOMU_labb2_Windows_Universal_App.WOMU_labb2_Windows_Universal_App_Xaml
         private object Activate_0_TaskDetailPage() { return new global::WOMU_labb2_Windows_Universal_App.TaskDetailPage(); }
         private object Activate_3_TasksPage() { return new global::WOMU_labb2_Windows_Universal_App.TasksPage(); }
         private object Activate_4_MainPage() { return new global::WOMU_labb2_Windows_Universal_App.MainPage(); }
+        private object Activate_5_UserView() { return new global::WOMU_labb2_Windows_Universal_App.UserView(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -218,6 +221,13 @@ namespace WOMU_labb2_Windows_Universal_App.WOMU_labb2_Windows_Universal_App_Xaml
             case 4:   //  WOMU_labb2_Windows_Universal_App.MainPage
                 userType = new global::WOMU_labb2_Windows_Universal_App.WOMU_labb2_Windows_Universal_App_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_4_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  WOMU_labb2_Windows_Universal_App.UserView
+                userType = new global::WOMU_labb2_Windows_Universal_App.WOMU_labb2_Windows_Universal_App_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_UserView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
