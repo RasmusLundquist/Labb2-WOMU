@@ -400,4 +400,3 @@ C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb
 C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\Zzooki\Documents\Visual Studio 2015\Projects\Labb2\Labb2-WOMU\WOMU-labb2_Windows_Universal_App\bin\x86\Debug\Newtonsoft.Json.dll

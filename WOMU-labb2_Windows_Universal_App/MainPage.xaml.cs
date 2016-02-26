@@ -1,10 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -15,38 +24,19 @@ namespace WOMU_labb2_Windows_Universal_App
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const string WebUrl = "http://localhost:4189/api/NewUsers/";
-
         private HttpClient httpClient;
         private User activeUser;
-        private List<User> AllUsers;
 
         public MainPage()
         {
             this.InitializeComponent();
             httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri("http://localhost:4189");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             httpClient.MaxResponseContentBufferSize = 300000;
-
-            
-            GetUsers();
-
-            this.InitializeComponent();
-
         }
 
-        private async void GetUsers()
-        {
-            var httpClient = new HttpClient();
-
-            var json = await httpClient.GetStringAsync(App.BaseUri + "NewUsers");
-
-            AllUsers = JsonConvert.DeserializeObject<List<User>>(json);
-        
-
-        }
-
-    private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }
